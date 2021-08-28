@@ -1,0 +1,72 @@
+{ 
+    "status" : true,
+    "message" : "Data Found",
+    "data" : [
+              {
+                  "day" : "Lunes",
+                  "numb" : 21,
+                  "ordered" : false,
+                  "comida" : null
+              },
+              {
+                  "day" : "Martes",
+                  "numb" : 22,
+                  "ordered" : true,
+                  "comida" : {
+                       "id" : 1,
+                       "name" : "Lo Mein de pollo",
+                       "recomended" : true,
+                       "ingredientes" : "Ingredientes: Delicioso plato de pasta con pollo, verduras salteadas y chía.",
+                       "kcal" : 800,
+                       "grasa" : 100,
+                       "carbo" :  200,
+                       "prote" : 100,
+                       "etiquetas" : [ 
+                              {
+                                  "foto" : "www.icon.com",
+                                  "descrip" : "Bajo en sodio"
+                              },
+                               {
+                                  "foto" : "www.icon.com",
+                                  "descrip" : "Bajo en sodio"
+                              }
+                           ]
+                  }
+              },{
+                  "day" : "Miercoles",
+                  "numb" : 23,
+                  "ordered" : false,
+                  "comida" : null
+              },{
+                  "day" : "Jueves",
+                  "numb" : 24,
+                  "ordered" : false,
+                  "comida" : null
+              },{
+                  "day" : "Viernes",
+                  "numb" : 25,
+                  "ordered" : true,
+                  "comida" : {
+                       "id" : 2,
+                       "name" : "Lo Mein de pollo",
+                       "recomended" : true,
+                       "ingredientes" : "Ingredientes: Delicioso plato de pasta con pollo, verduras salteadas y chía.",
+                       "kcal" : 800,
+                       "grasa" : 100,
+                       "carbo" :  200,
+                       "prote" : 100,
+                       "etiquetas" : [ 
+                              {
+                                  "foto" : "www.icon.com",
+                                  "descrip" : "Bajo en sodio"
+                              },
+                               {
+                                  "foto" : "www.icon.com",
+                                  "descrip" : "Bajo en sodio"
+                              }
+                           ]
+                  }
+              }
+             
+         ]
+ }

@@ -15,17 +15,20 @@ class _WidgetHeaderState extends State<WidgetHeader> {
 
     final phoneSize = MediaQuery.of(context).size;
 
-    return Container(
-         width: phoneSize.width,
-         height:  phoneSize.height * 0.15,
-         child:  Column(
-             children: [
-                     SizedBox( height: 10, ),
-                     WidgetHeaderTitle(),
-                     SizedBox( height:  20 , ),
-                     WidgetBarraCalories(),
-             ],
-         ) ,
+    return Padding(
+      padding: const EdgeInsets.symmetric( horizontal: 10.0 ),
+      child: Container(
+           width: phoneSize.width,
+           height:  phoneSize.height * 0.14,
+           child:  Column(
+               children: [
+                       SizedBox( height: 10, ),
+                       WidgetHeaderTitle(),
+                       SizedBox( height:  20 , ),
+                       WidgetBarraCalories(),
+               ],
+           ) ,
+      ),
     );
 
   }

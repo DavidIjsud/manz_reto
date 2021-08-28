@@ -30,4 +30,9 @@ flutter:
     - assets/images/circular_barra.png
     - assets/images/switch_boton.png
     - assets/images/configuracion.png
+    - assets/images/almuerzo.png
+    - assets/images/cena.png
+    - assets/images/media_manana.png
+    - assets/images/media_tarde.png
+    - assets/images/pack.png
 

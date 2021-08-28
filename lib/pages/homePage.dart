@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:manzana_verde_reto/helpers/constantes.dart';
+import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetDeliveryAddress.dart';
 import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetHeader.dart';
+import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetCalendar.dart';
+import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetSesion.dart';
 
 class MisPedidosPage extends StatefulWidget {
   const MisPedidosPage({ Key? key }) : super(key: key);
@@ -44,7 +47,13 @@ class _HomePageState extends State<MisPedidosPage> {
     body: SafeArea(
       child: Column(
            children: [
-                 Card(child: WidgetHeader(), elevation: 3, ),
+                 Card(child: WidgetHeader(), elevation: 0, ),
+                 Card( child:  WidgetCalendar() , elevation: 0,  ),
+                 Card( child: WidgetDeliveryInfo(), elevation: 0,  ),
+                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
+                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
+                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
+                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png")
            ],
       ),
     )  ,
