@@ -35,4 +35,5 @@ flutter:
     - assets/images/media_manana.png
     - assets/images/media_tarde.png
     - assets/images/pack.png
+    - assets/jsons/daysOrdered.json
 

@@ -51,9 +51,9 @@ class _HomePageState extends State<MisPedidosPage> {
                  Card( child:  WidgetCalendar() , elevation: 0,  ),
                  Card( child: WidgetDeliveryInfo(), elevation: 0,  ),
                  WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
-                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
-                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
-                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png")
+                 WidgetSesion("Almuerzo", 800, false, "assets/images/media_manana.png"),
+                 WidgetSesion("Media Tarde", 200, false, "assets/images/media_manana.png"),
+                 WidgetSesion("Cena", 800, false, "assets/images/media_manana.png")
            ],
       ),
     )  ,
