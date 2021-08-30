@@ -19,7 +19,7 @@
                 "foods" :
                  [
                  ],
-                "credits" : true      
+                "credits" : false      
             },
             {
                 "name" : "Media Tarde",

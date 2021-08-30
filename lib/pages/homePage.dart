@@ -93,18 +93,21 @@ class _HomePageState extends State<MisPedidosPage> {
                   
                                   List<InfoOfDay>   info =   infoOfDayFromJson(  jsonEncode(asyncSnapshot.data!["data"]["information"])  )  ;                                
                                   return Expanded(
-                                    child: ListView.builder(
-                                      itemCount: info.length,
-                                      itemBuilder: ( _ , i ) {
-                                            
-                                            if( info[i].foods.isNotEmpty  ){
-                                                 
-                                                return WidgetListOfFood( info[i].foods );
-                                            }else{
-                                                // return Container( child: Text("Comidas 2"), );
-                                                return WidgetSesion(   snapshot.data!.dayBtnselected , snapshot.data!.nroDay  ,info[i].name  , info[i].porcent, info[i].credits  ,  info[i].image );
-                                            }
-                                      }
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric( horizontal: 15 ),
+                                      child: ListView.builder(
+                                        itemCount: info.length,
+                                        itemBuilder: ( _ , i ) {
+                                              
+                                              if( info[i].foods.isNotEmpty  ){
+                                                   
+                                                  return WidgetListOfFood( info[i].foods );
+                                              }else{
+                                                  // return Container( child: Text("Comidas 2"), );
+                                                  return WidgetSesion(   snapshot.data!.dayBtnselected , snapshot.data!.nroDay  ,info[i].name  , info[i].porcent, info[i].credits  ,  info[i].image );
+                                              }
+                                        }
+                                      ),
                                     ),
                                   );  
                                   
