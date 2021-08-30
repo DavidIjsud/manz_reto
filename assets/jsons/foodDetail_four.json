@@ -1,0 +1,39 @@
+{
+    "status" : true,
+    "message" : "food found",
+    "data" : {
+        
+            "id" : 4,
+            "name_food" : "Lo Mein De Pollo",
+            "recomended" : true,
+            "tags" : [
+                  "Bajo en sodio",
+                  "Bajo en azucar",
+                  "Bajo en gluten",
+                  "Sin lactosa",
+                  "Bajo en carbo"
+                ],
+            "nutritions" : {
+                "kcal" : 800,
+                "grasa" : 6,
+                "carbo" : 108,
+                "prote" : 41
+            } ,   
+                
+            "img" : "assets/images/lunch_comida.png",
+            "salads" : [
+                
+                    {
+                        "id" : 1,
+                        "recomended" : true,
+                        "img" : "assets/images/lunch_comida.png"
+                        
+                    }        
+                
+                
+                ]
+            
+            
+        
+    }
+}

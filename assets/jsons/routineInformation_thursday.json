@@ -1,0 +1,42 @@
+{
+    "status" : true,
+    "message" : "data found",
+    "data" : {
+         "day" : "Jueves", 
+         "nro" : 24,
+          "information" : [
+            {
+                "name" : "Media Mañana",
+                "porcent" : 200,
+                "image" : "assets/images/media_manana.png",
+                "foods" : [],
+                "credits" : false
+            },
+            {
+                "name" : "Almuerzo",
+                "porcent" : 800,
+                "image" : "assets/images/almuerzo.png",
+                "foods" :
+                 [
+                 ],
+                "credits" : true      
+            },
+            {
+                "name" : "Media Tarde",
+                "porcent" : 200,
+                "image" : "assets/images/media_tarde.png",
+                "foods" : [],
+                "credits" : false
+            },
+             {
+                "name" : "Cena",
+                "porcent" : 800,
+                "image" : "assets/images/cena.png",
+                "foods" : [],
+                "credits" : false
+            }
+         ]
+             
+    }
+    
+}  

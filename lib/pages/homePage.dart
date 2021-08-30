@@ -1,8 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:manzana_verde_reto/blocs/homePageBloc.dart';
+import 'package:manzana_verde_reto/classEvents/selectedDayEvent.dart';
 import 'package:manzana_verde_reto/helpers/constantes.dart';
+import 'package:manzana_verde_reto/models/infoDay.dart';
+import 'package:manzana_verde_reto/providers/http_requests.dart';
 import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetDeliveryAddress.dart';
 import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetHeader.dart';
 import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetCalendar.dart';
+import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetListOfFood.dart';
 import 'package:manzana_verde_reto/widgets/homePageWidgets/widgetSesion.dart';
 
 class MisPedidosPage extends StatefulWidget {
@@ -13,6 +20,10 @@ class MisPedidosPage extends StatefulWidget {
 }
 
 class _HomePageState extends State<MisPedidosPage> {
+
+
+  final HomePageBloc _homePageBloc = new HomePageBloc();
+
   @override
   Widget build(BuildContext context) {
 
@@ -47,16 +58,67 @@ class _HomePageState extends State<MisPedidosPage> {
     body: SafeArea(
       child: Column(
            children: [
-                 Card(child: WidgetHeader(), elevation: 0, ),
-                 Card( child:  WidgetCalendar() , elevation: 0,  ),
-                 Card( child: WidgetDeliveryInfo(), elevation: 0,  ),
-                 WidgetSesion("Media mañana", 200, false, "assets/images/media_manana.png"),
-                 WidgetSesion("Almuerzo", 800, false, "assets/images/media_manana.png"),
-                 WidgetSesion("Media Tarde", 200, false, "assets/images/media_manana.png"),
-                 WidgetSesion("Cena", 800, false, "assets/images/media_manana.png")
+          
+                Column(
+                   children: [
+                       Card(child: WidgetHeader(), elevation: 0, ),
+                      Card( child:  WidgetCalendar() , elevation: 0,  ),
+                      Card( child: WidgetDeliveryInfo(), elevation: 0,  ),
+                   ],
+                ),
+                  
+                Expanded(
+                  child: StreamBuilder<EventSelectedDay>(
+                    initialData:  EventSelectedDay( true, 1 , "Lunes" , 21  ) ,
+                    stream: _homePageBloc.streamGetEventedDay,
+                    builder: ( _ , AsyncSnapshot<EventSelectedDay> snapshot  ) {
+                        
+                         if( snapshot.hasError || !snapshot.hasData  ){
+                              return Center(
+                                  child: CircularProgressIndicator( color:  Colores.greenColorManzanaVerde, )  ,
+                              );
+                         }
+                  
+                         return FutureBuilder<Map<String , dynamic>>(
+                  
+                             future: RequestsHttp.getDataOfDay( snapshot.data!.dayBtnselected ,  snapshot.data!.nroDay   )  ,
+                             builder:  ( _ , AsyncSnapshot<Map<String, dynamic >> asyncSnapshot  ) {
+                                  if( asyncSnapshot.hasError || !asyncSnapshot.hasData ){
+                                        return Center( child:  CircularProgressIndicator( color:  Colores.greenColorManzanaVerde , ) ,   );
+                                  }
+                  
+                                  if( asyncSnapshot.data!.isEmpty ){
+                                      return Container( child: Text("Seleccione una fecha")  , );
+                                  }
+                  
+                                  List<InfoOfDay>   info =   infoOfDayFromJson(  jsonEncode(asyncSnapshot.data!["data"]["information"])  )  ;                                
+                                  return Expanded(
+                                    child: ListView.builder(
+                                      itemCount: info.length,
+                                      itemBuilder: ( _ , i ) {
+                                            
+                                            if( info[i].foods.isNotEmpty  ){
+                                                 
+                                                return WidgetListOfFood( info[i].foods );
+                                            }else{
+                                                // return Container( child: Text("Comidas 2"), );
+                                                return WidgetSesion(   snapshot.data!.dayBtnselected , snapshot.data!.nroDay  ,info[i].name  , info[i].porcent, info[i].credits  ,  info[i].image );
+                                            }
+                                      }
+                                    ),
+                                  );  
+                                  
+                  
+                             }
+                             
+                          );
+                  
+                    }
+                  ),
+                ),
            ],
       ),
     )  ,
-);
+   );
   }
 }

@@ -9,5 +9,6 @@ class Colores{
   static const Color yellowColorManzanaVerde = Color.fromRGBO(255, 213, 56, 1);
   static const Color borderColorManzanaVerde = Color.fromRGBO(232, 232, 232, 1);
   static const Color cardSeasionColorManzanaVerde = Color.fromRGBO(250, 250, 250, 1);
+   static const Color greenColorManzanaVerdeO = Color.fromRGBO(53, 178, 102, 0.3);
 
 }

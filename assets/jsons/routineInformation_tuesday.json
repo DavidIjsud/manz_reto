@@ -1,0 +1,54 @@
+{
+    "status" : true,
+    "message" : "data found",
+    "data" : {
+         "day" : "Martes", 
+         "nro" : 22,
+          "information" : [
+            {
+                "name" : "Media Mañana",
+                "porcent" : 200,
+                "image" : "assets/images/media_manana.png",
+                "foods" : [],
+                "credits" : false
+            },
+            {
+                "name" : "Almuerzo",
+                "porcent" : 800,
+                "image" : "assets/images/almuerzo.png",
+                "foods" :
+                 [
+                    {
+                        "name_food" : "Pescado escalfado con trigo",
+                        "procent_food" : 800,
+                        "img" : "assets/images/comida_one.png",
+                        "id" : 1
+                    },
+                     {
+                        "name_food" : "Ensalada de quinua y baterraga",
+                        "procent_food" : 200,
+                        "img" : "assets/images/comida_two.png",
+                        "id" : 1
+                    }
+                    ],
+                "credits" : true      
+            },
+            {
+                "name" : "Media Tarde",
+                "porcent" : 200,
+                "image" : "assets/images/media_tarde.png",
+                "foods" : [],
+                "credits" : false
+            },
+             {
+                "name" : "Cena",
+                "porcent" : 800,
+                "image" : "assets/images/cena.png",
+                "foods" : [],
+                "credits" : false
+            }
+         ]
+             
+    }
+    
+}  

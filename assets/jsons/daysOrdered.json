@@ -50,27 +50,8 @@
                   "id"  : 5,
                   "day" : "Viernes",
                   "numb" : 25,
-                  "ordered" : true,
-                  "comida" : {
-                       "id" : 2,
-                       "name" : "Lo Mein de pollo",
-                       "recomended" : true,
-                       "ingredientes" : "Ingredientes: Delicioso plato de pasta con pollo, verduras salteadas y chía.",
-                       "kcal" : 800,
-                       "grasa" : 100,
-                       "carbo" :  200,
-                       "prote" : 100,
-                       "etiquetas" : [ 
-                              {
-                                  "foto" : "www.icon.com",
-                                  "descrip" : "Bajo en sodio"
-                              },
-                               {
-                                  "foto" : "www.icon.com",
-                                  "descrip" : "Bajo en sodio"
-                              }
-                           ]
-                  }
+                  "ordered" : false,
+                  "comida" : null
               }
              
          ]

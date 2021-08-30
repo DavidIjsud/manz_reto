@@ -27,6 +27,7 @@ class _WidgetDayState extends State<WidgetDay> {
     final phoneSize = MediaQuery.of(context).size;
     return Container(
       child: StreamBuilder<EventSelectedDay>(
+        initialData:  EventSelectedDay( true, 1, "Lunes" , 21 ) ,
         stream:  this._homePageBloc.streamGetEventedDay  ,
         builder: (context, AsyncSnapshot<EventSelectedDay>  snapshot) {
           print(snapshot.hasData);

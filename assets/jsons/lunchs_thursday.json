@@ -1,0 +1,39 @@
+{
+    "status" : true,
+    "message" : "data found",
+    "data" : {
+        "day" : "Jueves",
+        "nro" : 24,
+        "lunchs" : [
+               {
+                   "img" : "assets/images/lunch_comida.png",
+                   "name_lunch" : "Lo Mein De Pollo",
+                   "recomended" : true,
+                   "calories" : 800,
+                   "id" : 1
+               },
+                 {
+                   "img" : "assets/images/lunch_comida.png",
+                   "name_lunch" : "Lo Mein De Pollo",
+                   "recomended" : true,
+                   "calories" : 800,
+                   "id" : 2
+               },
+                 {
+                   "img" : "assets/images/lunch_comida.png",
+                   "name_lunch" : "Lo Mein De Pollo",
+                   "recomended" : true,
+                   "calories" : 800,
+                   "id" : 3
+               },
+                 {
+                   "img" : "assets/images/lunch_comida.png",
+                   "name_lunch" : "Lo Mein De Pollo",
+                   "recomended" : true,
+                   "calories" : 800,
+                   "id" : 4
+               }
+            ]
+    }
+    
+}

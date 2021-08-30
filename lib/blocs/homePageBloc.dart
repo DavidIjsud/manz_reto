@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:manzana_verde_reto/classEvents/addFoodEvent.dart';
 import 'package:manzana_verde_reto/classEvents/eventBase.dart';
 import 'package:manzana_verde_reto/classEvents/selectedDayEvent.dart';
 
@@ -11,15 +10,6 @@ class HomePageBloc {
 
   Stream<EventSelectedDay> get streamGetEventedDay => _output.stream;
   StreamSink<EventSelectedDay> get streamSinkEventedDay => _input.sink;
-
-    final StreamController<AddFoodEvent> _inputFood = new StreamController(); 
-  final StreamController<AddFoodEvent> _outputFood = new StreamController.broadcast(); 
-
-  Stream<AddFoodEvent> get streamGetFoodEvent => _outputFood.stream;
-  StreamSink<AddFoodEvent> get streamSinkFoodEvent => _inputFood.sink;
-
-
-  
  
   static final HomePageBloc _singletonHomePageBloc = HomePageBloc._internal();
 
@@ -35,8 +25,6 @@ class HomePageBloc {
   void dispose(){
     _input.close();
     _output.close(); 
-    _outputFood.close();
-    _inputFood.close();
   }
 
   void _onEvent( EventBase event ){
@@ -44,10 +32,6 @@ class HomePageBloc {
        if( event is EventSelectedDay ){
            print( event.btnSelected );
            this._output.add(event);
-       }
-
-       if( event is AddFoodEvent ){
-           this._outputFood.add(event);
        }
     
   }

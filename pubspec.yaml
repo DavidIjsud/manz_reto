@@ -34,6 +34,21 @@ flutter:
     - assets/images/cena.png
     - assets/images/media_manana.png
     - assets/images/media_tarde.png
+    - assets/images/corazon.png
+    - assets/images/lunch_comida.png
     - assets/images/pack.png
     - assets/jsons/daysOrdered.json
-
+    - assets/jsons/routineInformation_tuesday.json
+    - assets/jsons/routineInformation_friday.json
+    - assets/jsons/routineInformation_monday.json
+    - assets/jsons/routineInformation_wednesday.json
+    - assets/jsons/routineInformation_thursday.json
+    - assets/images/comida_one.png
+    - assets/images/comida_two.png
+    - assets/jsons/lunchs_monday.json
+    - assets/jsons/lunchs_thursday.json
+    - assets/jsons/foodDetail.json
+    - assets/jsons/foodDetail_two.json
+    - assets/jsons/foodDetail_three.json
+    - assets/jsons/foodDetail_four.json
+    
