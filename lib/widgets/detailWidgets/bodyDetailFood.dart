@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manzana_verde_reto/helpers/constantes.dart';
 import 'package:manzana_verde_reto/models/foodDetail.dart';
-import 'package:manzana_verde_reto/pages/pictureFoodPage.dart';
 import 'package:manzana_verde_reto/widgets/detailWidgets/widgetBtnAddOrRemove.dart';
 import 'package:manzana_verde_reto/widgets/detailWidgets/widgetCheckeds.dart';
 import 'package:manzana_verde_reto/widgets/detailWidgets/widgetImageDetail.dart';
@@ -12,10 +11,11 @@ import 'package:manzana_verde_reto/widgets/detailWidgets/widgetTags.dart';
 class WidgetBodyDetail extends StatefulWidget {
 
   final FoodDetail foodDetail;
-
+  final String day;
   final bool fromMenu;
+  final int nroDay;
 
-  const WidgetBodyDetail( this.fromMenu ,this.foodDetail  ,{ Key? key }) : super(key: key);
+  const WidgetBodyDetail( this.day  ,this.nroDay  ,this.fromMenu ,this.foodDetail  ,{ Key? key }) : super(key: key);
 
   @override
   _WidgetBodyDetailState createState() => _WidgetBodyDetailState();
@@ -50,7 +50,7 @@ class _WidgetBodyDetailState extends State<WidgetBodyDetail> {
                      )),
                  ) : Container(),
                  SizedBox( height: 20, ),
-                 Text("Ingredientes: Delicioso plato de pasta con pollo, verduras salteadas y chía."  ),
+                 Text("Ingredientes: " + widget.foodDetail.data.ingredients  ),
                  SizedBox( height: 20, ),
                  WidgetNutritionDetail( widget.foodDetail ),
                 SizedBox( height: 20, ),
@@ -59,7 +59,7 @@ class _WidgetBodyDetailState extends State<WidgetBodyDetail> {
                 WidgetSalads( widget.foodDetail ),
                 SizedBox( height: 30, ),
                 WidgetCheckedsButtons(),
-                WidgetBtnAddOrRemove( widget.fromMenu ),
+                WidgetBtnAddOrRemove(  widget.nroDay , widget.day,  widget.foodDetail  ,widget.fromMenu ),
 
 
            ],

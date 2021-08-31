@@ -1,10 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:manzana_verde_reto/blocs/lunchsPageBloc.dart';
-import 'package:manzana_verde_reto/helpers/constantes.dart';
-import 'package:manzana_verde_reto/models/lunchs.dart';
-import 'package:manzana_verde_reto/providers/http_requests.dart';
 import 'package:manzana_verde_reto/widgets/lunchsWidgets/foodElement.dart';
 import 'package:manzana_verde_reto/widgets/lunchsWidgets/widgetHeader.dart';
 

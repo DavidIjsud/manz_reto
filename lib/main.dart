@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       routes:  {
           "home" : (_) =>  MisPedidosPage(),
           "lunch" : (_) => LunchsPage( "" , 0 ),
-          "detailpage" : (_) => DetailPage(false,  0 ),
+          "detailpage" : (_) => DetailPage(1,"",false,  0 ),
           "picturepage" : (_) => PicturePage("")
       },
     );

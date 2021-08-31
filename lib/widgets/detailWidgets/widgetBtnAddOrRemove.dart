@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:manzana_verde_reto/database_simulation/database.dart';
 import 'package:manzana_verde_reto/helpers/constantes.dart';
+import 'package:manzana_verde_reto/models/foodDetail.dart';
 
 class WidgetBtnAddOrRemove extends StatefulWidget {
 
   final bool fromMenu;
+  final FoodDetail foodDetail;
+  final String day;
+  final int nroDay;
 
-  const WidgetBtnAddOrRemove( this.fromMenu ,{ Key? key }) : super(key: key);
+  const WidgetBtnAddOrRemove(   this.nroDay ,this.day ,this.foodDetail  ,this.fromMenu ,{ Key? key }) : super(key: key);
 
   @override
   _WidgetBtnAddOrRemoveState createState() => _WidgetBtnAddOrRemoveState();
 }
 
 class _WidgetBtnAddOrRemoveState extends State<WidgetBtnAddOrRemove> {
+
+
+  Database _localDatabase = Database();
+
   @override
   Widget build(BuildContext context) {
 
@@ -26,7 +35,11 @@ class _WidgetBtnAddOrRemoveState extends State<WidgetBtnAddOrRemove> {
                     ) ,
                     child:  widget.fromMenu ?
                       Center(child: Text("Agregar al pedido", style:  TextStyle( fontWeight: FontWeight.bold ) , )) : 
-                      Center(child: Text("Eliminar Pedido" , style:  TextStyle( fontWeight: FontWeight.bold )  ))  ,
+                      GestureDetector(
+                        onTap: (){
+                               _localDatabase.addNewFoodToRoutine("nameFood", 1, "img");
+                        },
+                        child: Center(child: Text("Eliminar Pedido" , style:  TextStyle( fontWeight: FontWeight.bold )  )))  ,
                 );
   }
 }

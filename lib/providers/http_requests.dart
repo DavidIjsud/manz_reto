@@ -44,7 +44,7 @@ class RequestsHttp{
 
    static Future<Map<String , dynamic>> getDataOfDay( String day , int nro  ) async {
         Database database = new Database();
-        return await Future.delayed( Duration( seconds: 1 ), ()   {
+        return await Future.delayed( Duration( milliseconds: 600 ), ()   {
                
                   return database.objetDay(day, nro);
 

@@ -11,8 +11,10 @@ class DetailPage extends StatefulWidget {
 
   final bool fromListLunchs;
   final int idFood; 
+  final String day;
+  final int nroDay;
 
-  const DetailPage( this.fromListLunchs , this.idFood ,{ Key? key }) : super(key: key);
+  const DetailPage(    this.nroDay ,this.day ,this.fromListLunchs , this.idFood ,{ Key? key }) : super(key: key);
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -37,7 +39,7 @@ class _DetailPageState extends State<DetailPage> {
         
                             FoodDetail foodDetail = foodDetailFromJson( jsonEncode( asyncsnapshot.data  )  );
         
-                            return WidgetBodyDetail( widget.fromListLunchs , foodDetail);
+                            return WidgetBodyDetail( widget.day  ,  widget.nroDay  ,widget.fromListLunchs , foodDetail);
         
                         }
                       ),

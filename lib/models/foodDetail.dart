@@ -17,12 +17,12 @@ class FoodDetail {
 
     bool status;
     String message;
-    Data data;
+    DetailInformation data;
 
     factory FoodDetail.fromJson(Map<String, dynamic> json) => FoodDetail(
         status: json["status"],
         message: json["message"],
-        data: Data.fromJson(json["data"]),
+        data: DetailInformation.fromJson(json["data"]),
     );
 
     Map<String, dynamic> toJson() => {
@@ -32,8 +32,8 @@ class FoodDetail {
     };
 }
 
-class Data {
-    Data({
+class DetailInformation {
+    DetailInformation({
        required this.id,
        required this.nameFood,
        required this.recomended,
@@ -41,6 +41,7 @@ class Data {
        required this.nutritions,
        required this.img,
        required this.salads,
+       required this.ingredients
     });
 
     int id;
@@ -50,8 +51,9 @@ class Data {
     Nutritions nutritions;
     String img;
     List<Salad> salads;
+    String ingredients;
 
-    factory Data.fromJson(Map<String, dynamic> json) => Data(
+    factory DetailInformation.fromJson(Map<String, dynamic> json) => DetailInformation(
         id: json["id"],
         nameFood: json["name_food"],
         recomended: json["recomended"],
@@ -59,6 +61,7 @@ class Data {
         nutritions: Nutritions.fromJson(json["nutritions"]),
         img: json["img"],
         salads: List<Salad>.from(json["salads"].map((x) => Salad.fromJson(x))),
+        ingredients: json["ingredients"]
     );
 
     Map<String, dynamic> toJson() => {
@@ -69,6 +72,7 @@ class Data {
         "nutritions": nutritions.toJson(),
         "img": img,
         "salads": List<dynamic>.from(salads.map((x) => x.toJson())),
+        "ingredients" : ingredients
     };
 }
 

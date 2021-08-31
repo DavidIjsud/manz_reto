@@ -52,7 +52,7 @@ class _WidgetFoodElementState extends State<WidgetFoodElement> {
                                           onTap: (){
                                               Navigator.push(
                                                   context,
-                                                  MaterialPageRoute(builder: (context) =>  DetailPage(true, lunchedFound.data.lunchs[i].id   ) ),
+                                                  MaterialPageRoute(builder: (context) =>  DetailPage(  widget.nro, widget.day  ,true, lunchedFound.data.lunchs[i].id   ) ),
                                                 );
                                           },
                                           child: Container(

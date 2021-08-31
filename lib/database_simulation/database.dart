@@ -39,6 +39,20 @@ class Database {
    
     }
 
+
+  void addNewFoodToRoutine( String nameFood , int porcent  , String img   ){
+
+        this._dataInformation.forEach((element) { 
+ 
+                if( element.containsKey("day") ){
+                    print("Si contiene day");
+                }
+           
+         });
+
+  }
+
+
    void addNewInformation( Map<String, dynamic>  data ){
        this._dataInformation.add(data);
    }
@@ -62,8 +76,8 @@ class Database {
 
 
                     if( data.containsValue(id) ){
-                    dataToReturn = element;
-                    return ;
+                        dataToReturn = element;
+                        return ;
                     } 
 
          });

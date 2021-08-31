@@ -4,7 +4,7 @@
     "data" : {
         
             "id" : 1,
-            "name_food" : "Lo Mein De Pollo",
+            "name_food" : "Pescado escalfado con trigo",
             "recomended" : true,
             "tags" : [
                   "Bajo en sodio",
@@ -20,7 +20,7 @@
                 "prote" : 41
             } ,   
                 
-            "img" : "assets/images/lunch_comida.png",
+            "img" : "assets/images/comida_one.png",
             "salads" : [
                 
                     {
@@ -31,7 +31,8 @@
                     }        
                 
                 
-                ]
+                ],
+             "ingredients" : "Delicioso plato de pasta con pollo, verduras salteadas y chia"   
             
             
         
