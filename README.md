@@ -1,28 +1,4 @@
-👋 Hi, I’m David Garcia Romero
+Proyecto realizado como reto.
+Se trata de una aplicacion donde se podra reservar comidas.
 
-👀 I’m interested in Learn much a lot about tecnologies about, flutter,angular, etc
-
-🌱 I’m currently learning flutter, and angular with nodejs
-
-💞️ I’m looking to collaborate on any project using flutter.
-
-These are some projects in production developed in flutter that i have made:
-
-https://play.google.com/store/apps/details?id=com.loyaltyclubs.opalclub (Using Flutter)
-
-https://play.google.com/store/apps/details?id=com.loyaltyclubs.shell (Using Flutter)
-
-https://play.google.com/store/apps/details?id=com.loyaltyclubs.farmacorpatc (Using Flutter)
-
-https://play.google.com/store/apps/details?id=com.loyaltyclubs.sbcclub (Native)
-
-📫 How to reach me:
-
-Gmail: Davidijsud@gmail.com
-
-LinkedIn : https://www.linkedin.com/in/david-garcia-romero-73925a206/
-
-FB : https://www.facebook.com/david.garciaromero.184
-
-ESTE REPOSITORIO CONTIENE EL RETO TERMINADO EN 75% APROXIMADAMENTE.
-AUN SE CONTINUARA MEJORANDO Y AVANZANDO EN LO QUE HAY DEL PROTOTIPADO.
+![image](https://drive.google.com/file/d/1ot5-PCvpoejFKcm0YEyog7Y595-wgHCv/view?usp=sharing)
