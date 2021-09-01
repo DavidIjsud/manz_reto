@@ -65,7 +65,7 @@ class _WidgetCalendarState extends State<WidgetCalendar> {
 
                                  GestureDetector(
                                    onTap: (){
-                                        _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  day.id,  day.day, day.numb    ) );
+                                        _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  day.id,  day.day, day.numb , true    ) );
                                    },
                                    child: WidgetDay( day.day.substring(0,3)  ,  day.numb , day.ordered , day.id   )
                               )

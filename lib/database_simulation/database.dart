@@ -4,12 +4,16 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:manzana_verde_reto/blocs/homePageBloc.dart';
+import 'package:manzana_verde_reto/classEvents/selectedDayEvent.dart';
 
 class Database {
 
    List<Map<String, dynamic>> _dataInformation = [];
    List<Map<String, dynamic>> _lunchsInformation = [];
    List<Map<String,  dynamic >> _lunchDetail = [];
+
+   HomePageBloc _homePageBloc = HomePageBloc();
 
     static final Database _singleTonDatabase  = Database._internal();
 
@@ -40,13 +44,61 @@ class Database {
     }
 
 
-  void addNewFoodToRoutine( String nameFood , int porcent  , String img   ){
+   void _setStreamData(  String day , int nroDay   ){
+
+      switch (day) {
+        case  "Lunes" :
+             _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  1,  day, nroDay, true    ) );
+          break;
+        case "Martes":
+            _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  2,  day, nroDay, true    ) );
+          break;
+        case "Miercoles":
+          _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  3,  day, nroDay, true    ) );
+          break;
+
+        case "Jueves":
+        _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  4,  day, nroDay, true    ) );
+          break;
+        case "Viernes":
+        _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  5,  day, nroDay, true    ) );
+          break;        
+        default:
+            _homePageBloc.streamSinkEventedDay.add( new EventSelectedDay(true ,  1,  day, nroDay, true    ) );
+      }
+
+   } 
+
+
+  void addNewFoodToRoutine( String nameFood , int porcent  , String img , String day , int nroDay   ){
 
         this._dataInformation.forEach((element) { 
- 
-                if( element.containsKey("day") ){
-                    print("Si contiene day");
+
+
+        Map<String, dynamic>  informationDay = element["data"];
+
+       if( informationDay.containsValue(day) && informationDay.containsValue(nroDay) ){
+
+                   
+                    List<dynamic> listOfDaysRoutine = informationDay["information"];
+                    Map<String, dynamic> lunchTurn =  listOfDaysRoutine[1];  
+
+                    List<dynamic> lunchs = lunchTurn["foods"];
+
+                    Map<String, dynamic> newFood = {
+                         "name_food" :nameFood,
+                        "procent_food" :porcent,
+                        "img" : img,
+                        "id" : 3
+                    };
+                    lunchs.add(newFood);
+                    _setStreamData( day, nroDay );
+
+                }else{
+                  print("Nelly");
                 }
+
+               
            
          });
 

@@ -69,7 +69,7 @@ class _HomePageState extends State<MisPedidosPage> {
                   
                 Expanded(
                   child: StreamBuilder<EventSelectedDay>(
-                    initialData:  EventSelectedDay( true, 1 , "Lunes" , 21  ) ,
+                    initialData:  EventSelectedDay( true, 1 , "Lunes" , 21 , false  ) ,
                     stream: _homePageBloc.streamGetEventedDay,
                     builder: ( _ , AsyncSnapshot<EventSelectedDay> snapshot  ) {
                         

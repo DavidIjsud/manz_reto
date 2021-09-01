@@ -6,8 +6,9 @@ class EventSelectedDay extends EventBase{
       int _idBtnSelected;
       String _day;
       int _nroDay;
+      bool _ordened;
 
-      EventSelectedDay(this._btnSelected , this._idBtnSelected, this._day , this._nroDay ) ;   
+      EventSelectedDay(this._btnSelected , this._idBtnSelected, this._day , this._nroDay  , this._ordened) ;   
 
       int get idBtnSelected => _idBtnSelected;
        set idBtnSelected( int id ) => idBtnSelected = id; 
@@ -20,6 +21,9 @@ class EventSelectedDay extends EventBase{
 
       int get nroDay => _nroDay;
        set nroDay( int nro )  => _nroDay = nro;
+
+       bool get ordeded => this._ordened;
+       set ordeded( bool ordeded ) => _ordened = ordeded; 
     
 
 }
